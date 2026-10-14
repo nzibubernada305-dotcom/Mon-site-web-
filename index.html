@@ -1,71 +1,121 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Bernada Nzibu Bazebimio - Portfolio Data Analyst</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body> 
-   
-    <header>
-        <!--<img class="photo_profil" src="bernada.jpg" alt="Photo de Bernada Nzibu Bazebimio">-->
-        <h1>Bernada Nzibu Bazebimio</h1>
-        <p class="tagline">Étudiante en BUT2 Science des Données | Recherche d'alternance (Octobre 2026)</p>
-        <p>
-            Bonjour et bienvenue sur mon site ! Actuellement en deuxième année de BUT Science des Données à l'IUT de Villetaneuse (USPN), 
-            je me passionne pour l'analyse de données, l'optimisation des effectifs et les enjeux RH par la donnée. 
-            Je parle couramment le français et l'anglais, ce qui me permet de collaborer efficacement dans des environnements variés.
-        </p>
-    </header>
+    <head>
+        <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title></title>
+        <link rel="stylesheet" href="mon_site_web.css">
+        <script src="script.js" defer></script>
+    </head>
+    <header> Bienvenue sur mon site🤩</header>
+    <h1> Bernada's Site </h1>
+    <section id="desktop" class="hidden">
+        <button id="shutdown">Éteindre</button>
+        <div class="icons">
+            <button id="icon" data-target="about">À propos de moi</button>
+            <button id="icon" data-target="education">Parcours Scolaire</button>
+            <button id="icon" data-target="skills">Compétence</button>
+            <button id="icon" data-target="projects">Projets</button>
+            <button id="icon" data-target="contacts">Contact</button>
+          
+            <!-- profil,projets univ-->
+         <div id="about" class="win hidden">
+             <div class="win-head">
+                 <span>À propos</span>
+                 <button class="close">X</button>
+             </div>
+             <div class="win-body">
+                 <p> Bonjour à tous, je m'applle Bernada Nzibu Bazebimio. En dehors des cours ....</p>
+             </div>
+         </div>
 
-   
-    <section>
-        <h2>Mes Compétences</h2>
-        <ul>
-            <li><strong>Programmation & Analyse :</strong> Python (Pandas), R, SQL, Excel avancé.</li>
-            <li><strong>Modélisation & Stats :</strong> Clustering, régression linéaire, statistiques descriptives, tests du Chi-deux.</li>
-            <li><strong>Data Visualisation :</strong> Tableau Desktop, Metabase, création de tableaux de bord.</li>
-            <li><strong>Soft Skills :</strong> Prise de décision rapide, adaptabilité, organisation, pédagogie.</li>
-        </ul>
-    </section>
 
-   
-    <section>
-        <h2>Projets Universitaires & Immersion</h2>
-        <ul>
-            <li><strong>Centre Hospitalier (Immersion) :</strong> Nettoyage de fichiers bruts, structuration des données de santé et automatisation de reportings sous Excel.</li>
-            <li><strong>Modélisation Statistique :</strong> Analyse de données de santé et développement d'un modèle de régression linéaire (cancer du sein).</li>
-            <li><strong>Base de données relationnelle :</strong> Normalisation, conversion d'un fichier Excel brut en schéma relationnel et reportings (Metabase / Tableau).</li>
-        </ul>
-    </section>
+        <div id="about" class="hidden">
+            <div class= "win-head">
+               <span>Parcours Scolaire</span>
+                <button class="icon">X</button>button>
+            </div>
+            <div class="win-body">
+                <p> Je proviens d'un bac générale avec les Options Mathématique et AMC</p>
+            </div>
+         </div>
 
-   
-    <section>
-        <h2>Expériences professionnelles & Engagements</h2>
-        <table>
-            <tr>
-                <td><strong>2026</strong></td>
-                <td>Centre Hospitalier de Gonesse - Immersion Data Analyst (analyse de flux et tableaux de bord)</td>
-            </tr>
-            <tr>
-                <td><strong>2025 - Présent</strong></td>
-                <td>Coach U7/U9 PCE Basketball & Arbitre Officielle CD077</td>
-            </tr>
-            <tr>
-                <td><strong>Juillet 2025</strong></td>
-                <td>Animatrice – Ville de Pontault-Combault</td>
-            </tr>
-        </table>
-    </section>
 
-  
-    <section>
-        <h2>Langues et Contact</h2>
-        <p><strong>Français :</strong> Natif | <strong>Anglais :</strong> Courant</p>
-        <p>
-            <a href="mailto:nzibubernada305@gmail.com">Me contacter par email</a> | 
-            <a href="https://linkedin.com/in/bernada-nzibu-bazebimio" target="_blank">LinkedIn</a>
-        </p>
-    </section>
-</body>
+            <div id="about" class="hidden">
+            <div class= "win-head">
+               <span>Compétences</span>
+                <button class="icon">X</button>button>
+            </div>
+            <div class="win-body">
+                <p> 
+                    <strong>Programmation & Analyse : </strong> Python (Pandas), R, SQL, Microsoft Excel tableaux croisés dynamiques et
+                    formules avancées),, nettoyage de données, traitement de fichiers bruts.</p><br>
+
+                 <p> 
+                     <strong>Modélisation :</strong>  modélisation mathématique, clustering.  </p> 
+                 <p>
+                     <strong>Bases de données : </strong> conception, restructuration, normalisation, requêtage SQL, schémas relationnels.</p> 
+                <p>
+                    <strong>Statistiques & Data : </strong> statistiques descriptives, probabilités, régression linéaire, tests du Chi-deux (χ²),
+                    datavisualisation,création de tableaux de bord et de reportings visuels sous Tableau Desktop, avec capacité
+                    d'adaptation à d'autres outils de data visualisation comme Qlik Sense ou Power BI.</p> 
+                
+                <p>
+                     <strong>Soft Skills : </strong> prise de décision rapide(arbitre), adaptabilité en situation de stress, organisation, communication
+                    pédagogique.</p>
+            </div>     
+         </div>
+
+      <div id=" about" classs=hidden >
+          <div class= "win-head">
+              <span>Projets</span>
+              <button class="icon">X</button>
+          </div>
+          <div class="win-body">
+              <p>
+                  <h6>Projets Universitaires — BUT Science des Données (2025 –présent)</h6><br>
+                  
+                  Base de données relationnelle : - Conception et implémentation d'une base de données: restructuration,
+                  normalisation et conversion d'un fichier Excel brut en schéma relationnel, automatisation de reportings sous
+                  Metabase et Tableau Desktop.<br>
+                  Objectif : rendre les données parfaitement exploitables, cohérentes et performantes.<br>
+                  <img class="img" src="" alt =""> 
+                  Modélisation statistique (Santé) : - Régression sur données réelles: analyse statistique de données
+                  hospitalières et développement d'un modèle de régression linéaire basé sur le cancer du sein.<br>
+                  Objectif : prédire le diagnostic de cancer en fonction des caractéristiques cellulaires des patientes.<br>
+                  
+                  Datavisualisation & Analyse socio-économique : - Analyse de données, reporting et data visualisation:
+                  traitement d'une base de données massive, analyse statistique (tests du χ²) et étude de l'impact du manque de
+                  diplôme sur le chômage des jeunes.<br>
+                  Objectif : valider une problématique socio-économique grâce à l'amélioration de la qualité des données,
+                  restituer les résultats dans une vidéo professionnelle et un powerpoint.<br>
+                  
+                  Immersion Analytique & Données de Santé (Centre Hospitalier) : Conception, traitement et analyse d'une
+                  base de données de patientes (service pédiatrique/maternité) : nettoyage de fichiers bruts, structuration des
+                  informations dans le respect du secret professionnel et automatisation de reportings sous Excel. Proposition et
+                  mise en œuvre d'une automatisation des reportings sous Excel pour améliorer le suivi d'activité au Centre
+                  Hospitalier.<br>
+                  
+                  Objectif : Analyser les flux de consultations, concevoir des tableaux de bord de suivi d'activité dynamiques et
+                  mettre en évidence des insights clés pour l'aide à la décision.<br>
+              </p>
+          </div>
+      </div>
+
+
+      <div id="abot" class="hidden>
+          <div  class="win-head">
+              <span> Contacts </span>
+              <button class="icon">X</button>
+          </div> 
+          <div class="win-body">
+              <span>+33 6 51 87 25 94</span><br>
+              <span>nzibubernada305@gmail.com</span><br>
+              <span>linkedin.com/in/bernada-nzibu-bazebimio </span><br>
+              <span>canva.link/67wgccgamzz36rh</span><br>
+              
+          </div>
+    </div>
+        
+   
 </html>
