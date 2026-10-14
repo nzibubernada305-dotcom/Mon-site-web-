@@ -7,86 +7,94 @@
         <link rel="stylesheet" href="mon_site_web.css">
         <script src="script.js" defer></script>
     </head>
-    <header> Bienvenue sur mon site🤩</header>
-    <h1> Bernada's Site </h1>
-    <section id="desktop" class="hidden">
-        <button id="shutdown">Éteindre</button>
-        <div class="icons">
-            <button id="icon" data-target="about">À propos de moi</button>
-            <button id="icon" data-target="education">Parcours Scolaire</button>
-            <button id="icon" data-target="skills">Compétence</button>
-            <button id="icon" data-target="projects">Projets</button>
-            <button id="icon" data-target="contacts">Contact</button>
-          
-            <!-- profil,projets univ-->
-         <div id="about" class="win hidden">
-             <div class="win-head">
-                 <span>À propos</span>
-                 <button class="close">X</button>
+    <body>
+        <header> Bienvenue sur mon site🤩</header>
+        <h1> Bernada's Site </h1>
+        <section id="desktop" class="hidden">
+            <button id="shutdown">Éteindre</button>
+            <div class="icons">
+                <button  class="icon" data-target="about">À propos de moi</button>
+                <button  class="icon" data-target="education">Parcours Scolaire</button>
+                <button  class="icon" data-target="skills">Compétence</button>
+                <button  class="icon" data-target="projects">Projets</button>
+                <button  class="icon" data-target="contacts">Contact</button>
+            <div id="about" class="win hidden" aria-hidden="true">
+                <div class="win-head">
+                    <span>À propos</span>
+                    <button class="close">X</button>
+                </div>
+                 <div class="win-body">
+                     <p> Bonjour à tous, je m'applle Bernada Nzibu Bazebimio. En dehors des cours ....</p>
+                     <img class="img" src="coach.JPEG" alt ="Entrainement"> <br>
+                     <img class="img" src="basket.JPEG" alt="mini-plateau" > <br>
+                 </div>
              </div>
-             <div class="win-body">
-                 <p> Bonjour à tous, je m'applle Bernada Nzibu Bazebimio. En dehors des cours ....</p>
+
+
+            <div id="education" class="hidden" aria-hidden="true">
+                <div class= "win-head">
+                   <span>Parcours Scolaire</span>
+                    <button class="icon">X</button>
+                </div>
+            </div>   
+                <div class="win-body">
+                    <p> Je proviens d'un bac générale avec les Options Mathématique et AMC</p>
+                    <img class="img" src="bernada.jpg" > <br>
+                </div>
              </div>
-         </div>
 
 
-        <div id="about" class="hidden">
-            <div class= "win-head">
-               <span>Parcours Scolaire</span>
-                <button class="icon">X</button>button>
-            </div>
-            <div class="win-body">
-                <p> Je proviens d'un bac générale avec les Options Mathématique et AMC</p>
-            </div>
-         </div>
+            <div id="skills" class="hidden" aria-hidden="true">
+                <div class= "win-head">
+                    <span>Compétences</span>
+                    <button class="icon">X</button>
+                </div>
+                <div class="win-body">
+                    <p> 
+                        <strong>Programmation & Analyse : </strong> Python (Pandas), R, SQL, Microsoft Excel tableaux croisés dynamiques et
+                        formules avancées),, nettoyage de données, traitement de fichiers bruts.</p><br>
 
-
-            <div id="about" class="hidden">
-            <div class= "win-head">
-               <span>Compétences</span>
-                <button class="icon">X</button>button>
-            </div>
-            <div class="win-body">
-                <p> 
-                    <strong>Programmation & Analyse : </strong> Python (Pandas), R, SQL, Microsoft Excel tableaux croisés dynamiques et
-                    formules avancées),, nettoyage de données, traitement de fichiers bruts.</p><br>
-
-                 <p> 
-                     <strong>Modélisation :</strong>  modélisation mathématique, clustering.  </p> 
-                 <p>
-                     <strong>Bases de données : </strong> conception, restructuration, normalisation, requêtage SQL, schémas relationnels.</p> 
-                <p>
-                    <strong>Statistiques & Data : </strong> statistiques descriptives, probabilités, régression linéaire, tests du Chi-deux (χ²),
-                    datavisualisation,création de tableaux de bord et de reportings visuels sous Tableau Desktop, avec capacité
-                    d'adaptation à d'autres outils de data visualisation comme Qlik Sense ou Power BI.</p> 
+                    <p> 
+                         <strong>Modélisation :</strong>  modélisation mathématique, clustering.  </p> 
+                    <p>
+                         <strong>Bases de données : </strong> conception, restructuration, normalisation, requêtage SQL, schémas relationnels.</p> 
+                    <p>
+                        <strong>Statistiques & Data : </strong> statistiques descriptives, probabilités, régression linéaire, tests du Chi-deux (χ²),
+                        datavisualisation,création de tableaux de bord et de reportings visuels sous Tableau Desktop, avec capacité
+                        d'adaptation à d'autres outils de data visualisation comme Qlik Sense ou Power BI.</p> 
                 
-                <p>
+                    <p>
                      <strong>Soft Skills : </strong> prise de décision rapide(arbitre), adaptabilité en situation de stress, organisation, communication
                     pédagogique.</p>
-            </div>     
-         </div>
-
-      <div id=" about" classs=hidden >
+                 </div>     
+             </div>
+    
+      <div id="projects" classs="hidden"  aria-hidden="true" >
           <div class= "win-head">
               <span>Projets</span>
               <button class="icon">X</button>
           </div>
           <div class="win-body">
+              <h6>Projets Universitaires — BUT Science des Données (2025 –présent)</h6><br>
+                  
               <p>
-                  <h6>Projets Universitaires — BUT Science des Données (2025 –présent)</h6><br>
                   
                   Base de données relationnelle : - Conception et implémentation d'une base de données: restructuration,
                   normalisation et conversion d'un fichier Excel brut en schéma relationnel, automatisation de reportings sous
-                  Metabase et Tableau Desktop.<br>
+                  Metabase et Tableau Desktop.<br> 
+                  <img class="img" src="borne.jpeg" alt ="Type de Borne de Recharge en France"> <br>
                   Objectif : rendre les données parfaitement exploitables, cohérentes et performantes.<br>
-                  <img class="img" src="" alt =""> 
+                 
+                  
                   Modélisation statistique (Santé) : - Régression sur données réelles: analyse statistique de données
                   hospitalières et développement d'un modèle de régression linéaire basé sur le cancer du sein.<br>
+                    <img class="img" src="cancer.jpeg" alt ="Type de cellule cancérigène"> 
                   Objectif : prédire le diagnostic de cancer en fonction des caractéristiques cellulaires des patientes.<br>
-                  
+                 
                   Datavisualisation & Analyse socio-économique : - Analyse de données, reporting et data visualisation:
                   traitement d'une base de données massive, analyse statistique (tests du χ²) et étude de l'impact du manque de
                   diplôme sur le chômage des jeunes.<br>
+                   <img class="img" src="Dataviz.JPG" alt ="Concours National de Data-viz 2026"> 
                   Objectif : valider une problématique socio-économique grâce à l'amélioration de la qualité des données,
                   restituer les résultats dans une vidéo professionnelle et un powerpoint.<br>
                   
@@ -95,7 +103,8 @@
                   informations dans le respect du secret professionnel et automatisation de reportings sous Excel. Proposition et
                   mise en œuvre d'une automatisation des reportings sous Excel pour améliorer le suivi d'activité au Centre
                   Hospitalier.<br>
-                  
+                       <img class="img" src="Hopital.jpeg" alt ="Journée d'immersion dans la peau d'un data analyste "> 
+                 
                   Objectif : Analyser les flux de consultations, concevoir des tableaux de bord de suivi d'activité dynamiques et
                   mettre en évidence des insights clés pour l'aide à la décision.<br>
               </p>
@@ -103,19 +112,23 @@
       </div>
 
 
-      <div id="abot" class="hidden>
+      <div id="contact" class="hidden"  aria-hidden ="true">
           <div  class="win-head">
               <span> Contacts </span>
               <button class="icon">X</button>
           </div> 
           <div class="win-body">
               <span>+33 6 51 87 25 94</span><br>
+               <img class="img" src="tel.png" alt= Numéro de télèphone > <br>
               <span>nzibubernada305@gmail.com</span><br>
+               <img class="img" src="mail.png" alt="Adresse mail" > <br>
               <span>linkedin.com/in/bernada-nzibu-bazebimio </span><br>
+               <img class="img" src="linkedin.png" alt="Profil LinkedIn"> <br>
               <span>canva.link/67wgccgamzz36rh</span><br>
+               <img class="img" src="portfilio.jpeg"  alt="Portfollio"> <br>
               
           </div>
     </div>
-        
-   
+     <section/>    
+</body>   
 </html>
