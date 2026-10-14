@@ -1,30 +1,38 @@
 .hidden{
     display:none;
 }
-.body{
+body{
     font-family:arial;
     padding:5px;
-    backgroud:#F6FDE7
+    background:#F6FDE7
 }
-.header{
+header{
      text-align: center;
 }
 .icon{
     border-color:#4A6E07;
     border-radius: 10px;
     cursor: pointer;
-    cursor-color: #101802;
+    color: #101802;
+}
+h1 {
+     text-align: center; color: #101802; 
 }
 .win{
-    width:120px;
+    width:300px;
+    border: 1px;
     border-color:#4A6E07;
+    border-radius: 6px;
     padding:5px;
 }
 .win .win-head {
-    font-size: 2rem;
-    padding-bottom: 10px; 
-    border-bottom: 3px solid #3498db;
-    display: inline-block; 
-    
+     font-size: 1rem; 
+     padding-bottom: 8px; 
+     border-bottom: 2px solid #3498db; 
+     display: flex;
     
 }
+ .img { max-width: 100%; 
+    height: auto;
+     display: block;
+      margin-top: 8px; }
