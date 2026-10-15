@@ -1,5 +1,5 @@
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {
  boutons = document.querySelectorAll('.icon');
 
  
@@ -15,10 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   
-  const boutonsFermer = document.querySelectorAll('.close');
+   boutonsFermer = document.querySelectorAll('.close');
   boutonsFermer.forEach(function(boutonFermeture) {
     boutonFermeture.addEventListener('click', function() {
-      const fenetre = boutonFermeture.closest('.win');
+      fenetre = boutonFermeture.closest('.win');
       if (fenetre) {
         fenetre.classList.add('hidden');
         fenetre.setAttribute('aria-hidden', 'true');
@@ -27,16 +27,16 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-  const boutonShutdown = document.getElementById('shutdown');
+   boutonShutdown = document.getElementById('shutdown');
   if (boutonShutdown) {
     boutonShutdown.addEventListener('click', function() {
-      const toutesLesFenêtres = document.querySelectorAll('.win');
+      toutesLesFenêtres = document.querySelectorAll('.win');
       toutesLesFenêtres.forEach(function(fenetre) {
         fenetre.classList.add('hidden');
         fenetre.setAttribute('aria-hidden', 'true');
       });
 
-      const desktop = document.getElementById('desktop');
+      desktop = document.getElementById('desktop');
       if (desktop) {
         desktop.classList.add('hidden');
         desktop.setAttribute('aria-hidden', 'true');
