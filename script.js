@@ -1,82 +1,33 @@
-
+// Attendre que toute la page soit chargée avant de lancer le code
 document.addEventListener('DOMContentLoaded', function() {
- boutons = document.querySelectorAll('.icon');
 
-   computer = document.getElementById('computer');
-   bootScreen = document.getElementById('bootScreen');
-   screen = document.getElementById('screen');
-   bootInstruction = document.getElementById('bootInstruction');
-  desktop = document.getElementById('desktop');
-   boutonShutdown = document.getElementById('shutdown');
+  // clic sur #computer
+  var computer = document.getElementById('computer');
+  var bootScreen = document.getElementById('bootScreen');//écran de démarrage
+  var desktop = document.getElementById('desktop');
 
-  // --- fonctions pour les "pixels" ---
-  function makePixels(cols = 40, rows = 12) {
-    if (!screen) return;
-    screen.style.display = 'grid';
-    screen.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
-    screen.innerHTML = '';
-    for (let i = 0; i < cols * rows; i++) {
-         p = document.createElement('div');
-      p.className = 'pixel';
-      screen.appendChild(p);
-    }
-  }
-
-  function bootSequence(onFinished) {
-    if (!screen) {
-      if (typeof onFinished === 'function') onFinished();
-      return;
-    }
-    const pixels = Array.from(screen.querySelectorAll('.pixel'));
-    // allumage séquentiel (ou shuffle si tu préfères)
-    pixels.forEach((p, i) => {
-      setTimeout(() => p.classList.add('on'), i * 10);
-    });
-    const total = pixels.length * 10 + 200;
-    setTimeout(() => {
-      // petit clignotement final
-      pixels.forEach((p, i) => setTimeout(() => p.classList.toggle('on'), i * 2));
-      setTimeout(() => {
-        // éteindre tous les pixels
-        pixels.forEach(p => p.classList.remove('on'));
-        if (typeof onFinished === 'function') onFinished();
-      }, 500);
-    }, total);
-  }
-
-  // --- démarrage depuis le boot ---
-  function startFromBoot() {
-    if (!bootInstruction || !bootScreen || !desktop) return;
-    bootInstruction.textContent = 'Démarrage...';
-    // empêcher double clic
-    if (computer) {
-      computer.removeEventListener('click', startFromBoot);
-      computer.removeEventListener('keydown', onKeyDown);
-    }
-    bootSequence(() => {
-      bootScreen.classList.add('hidden');
-      desktop.classList.remove('hidden');
-      desktop.setAttribute('aria-hidden', 'false');
-    });
-  }
-
-  function onKeyDown(e) {
-    if (e.key === 'Enter' || e.key === ' ') startFromBoot();
-  }
-
-  // init pixels et listeners du computer
-  makePixels();
   if (computer) {
-    computer.addEventListener('click', startFromBoot);
-    computer.addEventListener('keydown', onKeyDown);
+    computer.addEventListener('click', function() {
+
+      if (bootScreen) {
+        bootScreen.classList.add('hidden');
+      }
+      // Affiche le bureau
+      if (desktop) {
+        desktop.classList.remove('hidden');
+        desktop.setAttribute('aria-hidden', 'false');
+      }
+      // Lance la création de la grille de pixels
+      makePixels(10, 10);
+    });
   }
 
-  // --- ouvrir les fenêtres (icônes) ---
-  const boutons = document.querySelectorAll('.icon');
+  // 2. Ouvrir les fenêtres en cliquant sur les icônes (.icon)
+  var boutons = document.querySelectorAll('.icon');
   boutons.forEach(function(bouton) {
     bouton.addEventListener('click', function() {
-      const targetId = bouton.getAttribute('data-target');
-      const element = document.getElementById(targetId);
+      var targetId = bouton.getAttribute('data-target');
+      var element = document.getElementById(targetId);
       if (element) {
         element.classList.remove('hidden');
         element.setAttribute('aria-hidden', 'false');
@@ -84,11 +35,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // --- fermer les fenêtres ---
-  const boutonsFermer = document.querySelectorAll('.close');
+  // 3. Fermer les fenêtres en cliquant sur la croix (.close)
+  var boutonsFermer = document.querySelectorAll('.close');
   boutonsFermer.forEach(function(boutonFermeture) {
     boutonFermeture.addEventListener('click', function() {
-      const fenetre = boutonFermeture.closest('.win');
+      var fenetre = boutonFermeture.closest('.win');
       if (fenetre) {
         fenetre.classList.add('hidden');
         fenetre.setAttribute('aria-hidden', 'true');
@@ -96,36 +47,53 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // --- shutdown : revenir à l'écran de boot et réinitialiser ---
+  // 4. Éteindre le système avec le bouton #shutdown
+  var boutonShutdown = document.getElementById('shutdown');
   if (boutonShutdown) {
     boutonShutdown.addEventListener('click', function() {
-      // cacher toutes les fenêtres
-      const toutesLesFenêtres = document.querySelectorAll('.win');
+      // Ferme toutes les fenêtres ouvertes
+      var toutesLesFenêtres = document.querySelectorAll('.win');
       toutesLesFenêtres.forEach(function(fenetre) {
         fenetre.classList.add('hidden');
         fenetre.setAttribute('aria-hidden', 'true');
       });
 
-      // cacher le desktop
+      // Cache le bureau
       if (desktop) {
         desktop.classList.add('hidden');
         desktop.setAttribute('aria-hidden', 'true');
       }
 
-      // ré-afficher le boot
+      // Remet l'écran de démarrage d'origine
       if (bootScreen) {
         bootScreen.classList.remove('hidden');
       }
-      if (bootInstruction) {
-        bootInstruction.textContent = "Clique sur l'ordinateur pour démarrer";
-      }
-
-      // recréer les pixels et réactiver le clic sur l'ordi
-      makePixels();
-      if (computer) {
-        computer.addEventListener('click', startFromBoot);
-        computer.addEventListener('keydown', onKeyDown);
-      }
     });
   }
+
 });
+
+// 5. Fonction pour générer la grille de pixels dans #screen
+function makePixels(nombreColonnes, nombreLignes) {
+  var ecran = document.getElementById('screen');
+  if (!ecran) {
+    return;
+  }
+  
+  // Vider d'abord le contenu de l'écran
+  ecran.innerHTML = '';
+  
+  // Appliquer le nombre de colonnes en CSS
+  ecran.style.gridTemplateColumns = 'repeat(' + nombreColonnes + ', 1fr)';
+  
+  // Boucler pour créer les pixels un par un
+  var totalPixels = nombreColonnes * nombreLignes;
+  var i = 0;
+  
+  while (i < totalPixels) {
+    var unPixel = document.createElement('div');
+    unPixel.classList.add('pixel');
+    ecran.appendChild(unPixel);
+    i = i + 1;
+  }
+}
