@@ -36,3 +36,29 @@ h1 {
     height: auto;
      display: block;
       margin-top: 8px; }
+
+/* Styles pour l'écran pixel */
+#screen {
+  width: 620px;          /* ajuste selon ton design */
+  height: 200px;
+  background: #111;
+  margin: 10px auto;
+  display: grid;
+  gap: 2px;
+  padding: 6px;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.pixel {
+  width: 100%;
+  padding-top: 100%; /* carré (1:1) — la grille gère les dimensions */
+  background: #1a1a1a;
+  opacity: 0.25;
+  transition: background 120ms ease, opacity 120ms ease;
+}
+
+.pixel.on {
+  background: #7aff7a;
+  opacity: 1;
+}
